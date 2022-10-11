@@ -16,7 +16,7 @@ Steps taken to complete demo:
 5. add SSH public key from local user to newly created server to allow for SSH login
 
 6. add Firewall rules to server
-open port 20 for SSH login, restrict to local computer IP address
+open port 22 for SSH login, restrict to local computer IP address
 
 7. login to remote server using SSH -> ssh root@164.90.167.207
 
