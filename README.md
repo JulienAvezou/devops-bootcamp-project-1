@@ -8,6 +8,7 @@ Steps taken to complete demo:
 2. create own repo github.com:JulienAvezou/devops-bootcamp-project-1.git and push code there
 
 3. build jar file using following maven cmd -> mvn install
+<img width="633" alt="Capture d’écran 2022-10-12 à 00 18 42" src="https://user-images.githubusercontent.com/62488871/195208562-3846604d-66d2-4b2b-8b8c-03f949e740d5.png">
 
 4. create server/droplet on Digitalocean
 <img width="1187" alt="Capture d’écran 2022-10-11 à 23 53 05" src="https://user-images.githubusercontent.com/62488871/195205243-99f33d58-efce-40d2-99f2-5dbaf4f5270f.png">
