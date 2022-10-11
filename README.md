@@ -18,7 +18,7 @@ Steps taken to complete demo:
 6. add Firewall rules to server
 open port 22 for SSH login, restrict to local computer IP address
 
-7. login to remote server using SSH -> ssh root@164.90.167.207
+7. login to remote server using SSH & install java -> ssh root@164.90.167.207
 
 8. create new user for the app (best practice) -> adduser ju
 
