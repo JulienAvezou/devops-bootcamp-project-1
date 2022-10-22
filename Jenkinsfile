@@ -1,5 +1,5 @@
 
-def gv = load "script.groovy"
+def gv
 
 pipeline {
     agent any
