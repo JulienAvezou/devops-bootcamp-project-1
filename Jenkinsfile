@@ -37,7 +37,9 @@ pipeline {
             }
             steps {
                 script {
-                    buildImage 'julienavezou/my-repo:jma-2.0'
+                    buildImage 'julienavezou/my-repo:jma-3.0'
+                    dockerLogin()
+                    dockerPush 'julienavezou/my-repo:jma-3.0'
                 }
             }
         }
