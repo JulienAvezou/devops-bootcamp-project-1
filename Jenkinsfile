@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 script {
-                    buildImage()
+                    buildImage julienavezou/my-repo:jma-2.0
                 }
             }
         }
