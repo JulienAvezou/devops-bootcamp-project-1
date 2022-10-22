@@ -1,8 +1,8 @@
-def buildApp() {
+def buildJar() {
     echo 'building the application...'
 } 
 
-def testApp() {
+def buildImage() {
     echo 'testing the application...'
 } 
 
