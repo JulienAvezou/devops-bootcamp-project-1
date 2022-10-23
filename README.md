@@ -5,7 +5,7 @@ Steps taken to complete demo:
 
 1. clone repo git@gitlab.com:nanuchi/java-maven-app.git locally
 
-2. create own repo github.com:JulienAvezou/devops-bootcamp-project-1.git and push code there
+2. create own repo github.com:JulienAvezou/devops-bootcamp-project-1.git and push the code there
 
 3. build jar file using following maven cmd -> mvn install
 <img width="633" alt="Capture d’écran 2022-10-12 à 00 18 42" src="https://user-images.githubusercontent.com/62488871/195208562-3846604d-66d2-4b2b-8b8c-03f949e740d5.png">
