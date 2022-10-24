@@ -83,6 +83,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                        def encodedPassword = URLEncoder.encode("$PASS",'UTF-8')
                         sh 'git config --global user.email "jenkins@example.com"'
                         sh 'git config --global user.name "jenkins"'
                         
@@ -90,7 +91,7 @@ pipeline {
                         sh 'git branch'
                         sh 'git config --list'
                         
-                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/JulienAvezou/devops-bootcamp-project-1.git"         
+                        sh "git remote set-url origin https://${USER}:${encodedPassword}@github.com/JulienAvezou/devops-bootcamp-project-1.git"         
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:main'
