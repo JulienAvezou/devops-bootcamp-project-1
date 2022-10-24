@@ -23,6 +23,19 @@ pipeline {
                 }
             }
         }
+        stage("increment version") {
+            steps {
+                script {
+                    echo "incrementing app version..."
+                    sh 'mvn build-helper:parse-version \
+                        versions:set -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.newIncrementalVersion} \
+                        versions:commit'
+                    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+                    def version = matcher[0][1]
+                    env.IMAGE_NAME = "$version-$BUILD_NUMBER"
+                }
+            }
+        }
         stage("build jar") {
             when {
                 expression {
@@ -43,9 +56,9 @@ pipeline {
             }
             steps {
                 script {
-                    buildImage 'julienavezou/my-repo:jma-3.0'
+                    buildImage "julienavezou/my-repo:${IMAGE_NAME}"
                     dockerLogin()
-                    dockerPush 'julienavezou/my-repo:jma-3.0'
+                    dockerPush "julienavezou/my-repo:${IMAGE_NAME}"
                 }
             }
         }
