@@ -70,7 +70,10 @@ pipeline {
             }
             steps {
                 script {
-                    gv.deployApp()
+                    sshagent(['ec2-server-key']) {
+                        def dockerCmd = 'docker run -p 3000:8080 -d julienavezou/my-repo:jma-3.0'
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@18.193.46.11 ${dockerCmd}"
+                    }
                 }
             }
         }
